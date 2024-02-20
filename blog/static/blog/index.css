@@ -1,4 +1,100 @@
 img {
     width: 100px;
-    height: 100px;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+header img {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+}
+
+header h2 {
+    margin-top: 10px;
+    font-size: 24px;
+}
+
+#welcome {
+    background-color: #fff;
+    padding: 40px 0;
+    text-align: center;
+}
+
+#latest-post {
+    background-color: #f5f5f5;
+    padding: 40px 0;
+}
+
+.post-list {
+    list-style: none;
+    padding: 0;
+}
+
+.post-list li {
+    margin-bottom: 20px;
+}
+
+.post-list li h3 {
+    margin: 0;
+    font-size: 20px;
+}
+
+.post-list li p {
+    color: #666;
+}
+
+.about {
+    background-color: #fff;
+    padding: 40px 0;
+    text-align: center;
+}
+
+.about p {
+    margin-bottom: 10px;
+}
+
+.post {
+    margin-bottom: 30px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+    background-color: #fff;
+}
+
+.post img {
+    width: 100%;
+    height: auto;
+}
+
+.post-content {
+    padding: 20px;
+}
+
+.post-content h3 {
+    margin-top: 0;
+    font-size: 1.5rem;
+}
+
+.post-content p {
+    margin-bottom: 0;
 }

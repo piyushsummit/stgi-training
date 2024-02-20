@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+{% block title %}
+    All Posts
+{% endblock %}
+
+{% block css_files %}
+    <link rel="stylesheet" href="{% static "blog/index.css" %}">
+{% endblock %}
+
+{% block content %}
+    <section id="postdetail">
+        <h2>All posts</h2>
+        <ul>
+            <div class="post">
+                <a href="{% url 'single-post-page' slug=post.post_name %}">
+                    <img src="{% static post.post_image %}" alt="{{ post.post_title }}">
+                </a>
+                <div class="post-content">
+                    <h3><a href="{% url 'single-post-page' slug=post.post_name %}">{{ post.post_title|title }}</a></h3>
+                    <p>{{ post.post_body }}</p>
+                </div>
+            </div>
+        </ul>
+    </section>
+{% endblock %}

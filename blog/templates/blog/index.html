@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block title %}
-Selva's Blog Site
+    Piyush's Blog
 {% endblock %}
 
 {% block css_files %}
@@ -10,44 +10,48 @@ Selva's Blog Site
 {% endblock %}
 
 {% block content %}
-<section id="welcome">
-    <header>
-        <img src="{% static "blog/images/raju.jpg" %}" alt="Selva">
-        <h2>Selva</h2>
-    </header>
-    <p>
-        Hi, I am Selva and I love to cook healthy food
-    </p>
-</section>
+    <section id="welcome">
+        <div class="container">
+            <header>
+                <img src="{% static "blog/images/naturo.jpeg" %}" alt="Piyush">
+                <h2>Piyush</h2>
+            </header>
+            <p>
+                Hi, my name's Piyush and I like to program.
+            </p>
+        </div>
+    </section>
 
-<section id="latest-posts">
-    <h2>My latest posts</h2>
-    <ul>
-        <li>
-            <article class="post">
-                <a href="">
-                    <img src="" alt="Selva's posts">
-                </a>
-                <div class="post__content">
-                    <h3>Healthy Smoothie</h3>
-                    <p>
-                        Smoothies are a good way to start you healthy day.
-                        Try a smoothie for your breakfast.
-                        Keeps you energetic and full of vigour.
-                    </p>
-                </div>
-            </article>
-        </li>
-    </ul>
-</section>
+    <section id="latest-post">
+        <div class="container">
+            <h2>My Latest Posts</h2>
+            <ul class="post-list">
+                <li>
+                    <article class="post">
+                        <a href="{% url 'single-post-page' slug=post.post_name %}">
+                            <img src="{% static ""|add:post.post_image %}" alt="Piyush">
+                        </a>
+                        <div class="post__content">
+                            <h3>{{ post.post_title|title }}</h3>
+                            <p>
+                                {{ post.post_body }}
+                            </p>
+                        </div>
+                    </article>
+                </li>
+            </ul>
+        </div>
+    </section>
 
-<section class="about">
-    <h2>About Me</h2>
-    <p>
-        I love to write programs and love to cook.
-    </p>
-    <p>
-        My goal is to teach programming and help people with obesity and diabetes.
-    </p>
-</section>
+    <section class="about">
+        <div class="container">
+            <h2>About Me</h2>
+            <p>
+                I like to program.
+            </p>
+            <p>
+                I am doing the Django/Python training course.
+            </p>
+        </div>
+    </section>
 {% endblock %}

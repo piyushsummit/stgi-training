@@ -5,6 +5,28 @@
     All Posts
 {% endblock %}
 
+{% block css_files %}
+    <link rel="stylesheet" href="{% static "blog/index.css" %}">
+    <!-- Include any additional CSS files here -->
+{% endblock %}
+
 {% block content %}
-    <h1>All Posts on my site</h1>
+    <section id="latest-posts">
+        <div class="container">
+            <h2>All Posts</h2>
+            <div class="post-list">
+                {% for post in post_list %}
+                <div class="post">
+                    <a href="{% url 'single-post-page' slug=post.post_name %}">
+                        <img src="{% static post.post_image %}" alt="{{ post.post_title }}">
+                    </a>
+                    <div class="post-content">
+                        <h3><a href="{% url 'single-post-page' slug=post.post_name %}">{{ post.post_title|title }}</a></h3>
+                        <p>{{ post.post_body }}</p>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
 {% endblock %}
